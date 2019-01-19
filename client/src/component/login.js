@@ -42,7 +42,7 @@ class Login extends Component {
                 // padding:'20px'
             }}>
             <img src={this.state.picture} alt={this.state.name} />
-            <h2>Welcome {this.state.name}!</h2>
+            <h2>Hey {this.state.name}!</h2>
             
             </div>
         );
@@ -50,7 +50,7 @@ class Login extends Component {
           fbContent= (<FacebookLogin
             appId="606824983071355"
             autoLoad={true}
-            fields="name,email,picture"
+            fields="name,picture"
             onClick={this.componentClicked}
             callback={this.responseFacebook}/>);
       }
