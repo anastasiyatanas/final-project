@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GameOne from "./component/game1";
 import GameTwo from "./component/game2";
 import GameThree from "./component/game3";
-import Login from './component/login';
+
 import "./css/App.css";
 
 class App extends Component {

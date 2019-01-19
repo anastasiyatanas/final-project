@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FacebookLogin from 'react-facebook-login';
+import axios from 'axios';
 import '../css/game.css';
 
 class Login extends Component {
@@ -11,7 +12,15 @@ class Login extends Component {
         picture:''
     }
 
+    createUser = (userData) =>{
+        return axios.post("/api/users", userData).then(res => console.log (res))
+        
+    }
     responseFacebook = response => {
+        const userData= {name:response.name, 
+            image:response.picture.data.url, 
+            email:response.email}
+            this.createUser(userData)    
         this.setState({
             isLoggedIn: true,
         userID: response.userID,
@@ -46,6 +55,7 @@ class Login extends Component {
             onClick={this.componentClicked}
             callback={this.responseFacebook}/>);
       }
+      
       return (
         <div className="App">
           {fbContent}
