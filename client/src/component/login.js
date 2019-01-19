@@ -18,8 +18,7 @@ class Login extends Component {
     }
     responseFacebook = response => {
         const userData= {name:response.name, 
-            image:response.picture.data.url, 
-            email:response.email}
+            image:response.picture.data.url,}
             this.createUser(userData)    
         this.setState({
             isLoggedIn: true,
@@ -37,14 +36,14 @@ class Login extends Component {
       if(this.state.isLoggedIn) {
         fbContent=(
             <div style={{
-                width:'400px',
-                margin:'auto',
-                background: 'grey',
-                padding:'20px'
+                // width:'400px',
+                // margin:'auto',
+                // background: 'grey',
+                // padding:'20px'
             }}>
             <img src={this.state.picture} alt={this.state.name} />
-            <h2>welcome {this.state.name}</h2>
-            Email:{this.state.email}
+            <h2>Welcome {this.state.name}!</h2>
+            
             </div>
         );
       } else{
